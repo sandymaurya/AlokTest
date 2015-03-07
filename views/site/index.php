@@ -1,17 +1,15 @@
 <?php
 use app\models\TicketModel;
-
-$model = new TicketModel();
+$this->title = "Title";
 ?>
 <!--Buy Starts Here-->
 <div class="buy-g" id="buy">
     <div class="container">
-        <div class="row buy-g-top">
-            <h3 class="col-md-12">
+        <div class="buy-g-top">
+            <h3>
                 <span style="font-family:verdana,geneva,sans-serif">
                     <strong>
-                        <span
-                            style="color:#FF0000"> Vegas Pawn Stars Vip Tour - Rated #1 Tour in Las Vegas by Tour Advisor</span>
+                        <span style="color:#FF0000"> Vegas Pawn Stars Vip Tour - Rated #1 Tour in Las Vegas by Tour Advisor</span>
                     </strong>
                 </span>
             </h3>
@@ -41,7 +39,6 @@ $model = new TicketModel();
             ?>
             <!-- Tabs -->
         </div>
-        <div class="clearfix"></div>
     </div>
 </div>
 

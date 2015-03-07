@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "865ce4d9e6c2c445e707b268f070dd3f",
+    "hash": "a1948400a61500bc9f9dd9134dadaf35",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -153,6 +153,28 @@
             ]
         },
         {
+            "name": "bower-asset/jquery.payment",
+            "version": "v1.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/stripe/jquery.payment.git",
+                "reference": "c5e895412c45553bc6d6d22f32faae2288233440"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/stripe/jquery.payment/zipball/c5e895412c45553bc6d6d22f32faae2288233440",
+                "reference": "c5e895412c45553bc6d6d22f32faae2288233440",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/jquery": ">=1.5"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": "lib/jquery.payment.js"
+            }
+        },
+        {
             "name": "bower-asset/punycode",
             "version": "v1.3.2",
             "source": {
@@ -212,16 +234,16 @@
         },
         {
             "name": "cebe/markdown",
-            "version": "1.0.1",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cebe/markdown.git",
-                "reference": "9d6c36d6623497523ed421a31d940bc1d7435578"
+                "reference": "f681fee8303310415b746f3758eeda0a7ad08bda"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cebe/markdown/zipball/9d6c36d6623497523ed421a31d940bc1d7435578",
-                "reference": "9d6c36d6623497523ed421a31d940bc1d7435578",
+                "url": "https://api.github.com/repos/cebe/markdown/zipball/f681fee8303310415b746f3758eeda0a7ad08bda",
+                "reference": "f681fee8303310415b746f3758eeda0a7ad08bda",
                 "shasum": ""
             },
             "require": {
@@ -268,7 +290,7 @@
                 "markdown",
                 "markdown-extra"
             ],
-            "time": "2014-10-25 16:16:49"
+            "time": "2015-03-06 05:21:16"
         },
         {
             "name": "ezyang/htmlpurifier",
@@ -313,6 +335,48 @@
                 "html"
             ],
             "time": "2013-11-30 08:25:19"
+        },
+        {
+            "name": "ruskid/yii2-stripe",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ruskid/yii2-stripe.git",
+                "reference": "ed7dae870f0a9b9867e062a790781a37eef253a1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ruskid/yii2-stripe/zipball/ed7dae870f0a9b9867e062a790781a37eef253a1",
+                "reference": "ed7dae870f0a9b9867e062a790781a37eef253a1",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/jquery.payment": "1.2.2",
+                "yiisoft/yii2": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ruskid\\stripe\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GNU"
+            ],
+            "authors": [
+                {
+                    "name": "Victor Demin",
+                    "email": "demmbox@gmail.com"
+                }
+            ],
+            "description": "Yii2 Stripe Wrapper",
+            "homepage": "https://github.com/ruskid/yii2-stripe",
+            "keywords": [
+                "stripe",
+                "yii2"
+            ],
+            "time": "2015-03-05 11:22:16"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -899,7 +963,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "ruskid/yii2-stripe": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

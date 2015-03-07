@@ -97,6 +97,20 @@ ul.navig li a:hover, .active{
 	background:#fff;
 	color:#FF0000;
 }
+
+.help-block{
+    text-transform: none;
+    display: inline-block;
+}
+
+#order_travelerDoBMonth, #order_travelerDoBYear{
+    display: inline-block;
+    max-width: 50%;
+}
+
+#order_travelerDoBMonth select, #order_travelerDoBYear select{
+    width: auto;
+}
 /*-- Header Part Ends here --*/
 /*-- Save Part Starts Here --*/
 .save{
@@ -702,7 +716,7 @@ ul.callbacks_tabs.callbacks3_tabs {
 	user-select: none;
 	border:1px solid #fff;
 }
-.flat:hover, .form-head div:hover{
+.flat:hover, .form-head div:first-child:hover{
 	border:1px solid #6EC4CB;
 }
 .flat.open{
@@ -848,7 +862,7 @@ ul.callbacks_tabs.callbacks3_tabs {
 	margin:16px 0 0 -6px;
 	
 }
-.form-head div{
+.form-head div:first-child:first-child {
 	position: relative;
 	background: #FFF;
 	margin: 0.2em 0 1em;
@@ -860,7 +874,7 @@ ul.callbacks_tabs.callbacks3_tabs {
 	border:1px solid #fff;
 	
 }
-.form-head div input[type="text"], .form-head div input[type="number"]{
+.form-head div:first-child:first-child input[type="text"], .form-head div:first-child:first-child input[type="number"]{
 	margin-left: 6%;
 	border: none;
 	width: 85%;
@@ -869,6 +883,9 @@ ul.callbacks_tabs.callbacks3_tabs {
 	outline: none;
 	color:#333;
 	font-weight:600;
+}
+.has-error .flat {
+    border: 1px solid #a94442 !important;
 }
 .user-icon{
 	background: url(../mm-images/downloaded/quantity.png) no-repeat 3px -1px;
@@ -879,6 +896,9 @@ ul.callbacks_tabs.callbacks3_tabs {
 .step-f{
 	text-align:right;
 	margin:2% 5% 0 0;
+}
+.payment .step-f{
+    margin-right: 0;
 }
 .step-f input[type="submit"],.step-f button[type="submit"] {
 	border: 0px solid #fff;
@@ -1075,7 +1095,7 @@ h2.resp-accordion {
 	text-transform: uppercase;
 	margin:5px 0;
 }
-.card p{
+.card p,.card label{
 	font-size:0.875em;
 	font-weight:600;
 	text-transform: uppercase;
@@ -1083,6 +1103,20 @@ h2.resp-accordion {
 	padding:5px 0;
 	margin-bottom:5px;
 }
+.card #ticketmodel-travelertype label, .card #ticketmodel-paymentoptioncardtype label
+{
+    font-family: 'Lato', sans-serif;
+    autocolor: #000000;
+    font-size: 1em;
+    text-transform: uppercase;
+    padding: 0;
+    font-weight: normal;
+}
+
+.card.cardy .form-group{
+    margin-bottom: 0;
+}
+
 .card input[type="radio"]{
 	margin: 0 0.5em;
 	padding:3px;
@@ -1188,14 +1222,14 @@ h2.resp-accordion {
 	text-align: left;
 	margin: 10% 0 0;
 }
-.step-d input[type="submit"]{
+.step-d input[type="submit"],.step-d button[type="submit"]{
 	background:#CC0000;
 	padding:10px 30px;
 	color:#fff;
 	outline:none;
 	border:0;
 }
-.step-d input[type="submit"]:hover{
+.step-d input[type="submit"]:hover, .step-d button[type="submit"]:hover{
 	background:#FF0000;
 	transition:0.5s all;
 	-webkit-transition:0.5s all;
@@ -1412,7 +1446,7 @@ p.copyright a:hover{
 	.size .selected {
 		background: url(../mm-images/downloaded/size-point.png) no-repeat 8px 9px;
 	}
-	.form-head div input[type="text"], .form-head div input[type="number"] {
+	.form-head div:first-child input[type="text"], .form-head div:first-child input[type="number"] {
 		padding: 0.8em;
 		font-size: 0.875em;
 	}
@@ -1422,6 +1456,9 @@ p.copyright a:hover{
 	.form-head {
 		margin: 2% 5% 0;
 	}
+    .help-block{
+        text-text-replace: none;
+    }
 	.step-f {
 		margin: 0% 5% 0 0;
 	}
@@ -1773,14 +1810,14 @@ p.copyright a:hover{
 		margin: 5% 0 0;
 		width:100%;
 	}
-	.form-head div{
+	.form-head div:first-child{
 		margin:0;
 		padding:0.2em;
 	}
 	.step-f {
 		margin: 3% 0% 0 0;
 	}
-	.form-head div input[type="text"], .form-head div input[type="number"] {
+	.form-head div:first-child input[type="text"], .form-head div:first-child input[type="number"] {
 		padding: 0.5em;
 	}
 	.delivery {

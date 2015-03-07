@@ -8,12 +8,13 @@ use yii\base\Model;
 /**
  * ContactForm is the model behind the contact form.
  */
-class TicketModel extends Model
+class OrderModel extends Model
 {
     public $ticketTime;
     public $ticketHotel;
     public $ticketQuantity;
     public $ticketPromoCode;
+    public $bookingDate;
     public $bookingDay;
     public $bookingMonth;
     public $bookingYear;
@@ -39,26 +40,22 @@ class TicketModel extends Model
     {
         return [
             // name, email, subject and body are required
-            [['ticketTime', 'ticketHotel', 'ticketQuantity', 'ticketPromoCode'], 'required', 'on' => 'step1'],
-            [['bookingDay', 'bookingMonth', 'bookingYear', 'bookingSpecialNeeds'], 'required', 'on' => 'step2'],
-            [['travelerType', 'travelerName', 'travelerAddress', 'travelerDoBMonth', 'travelerDoBYear', 'travelerEmail','travelerPersonNames'], 'required', 'on' => 'step3'],
-            [['travelerEmail'], 'email', 'on' => 'step3'],
+            [['ticketTime', 'ticketHotel', 'ticketQuantity', 'ticketPromoCode'], 'required', "on" => "step1"],
+            [['bookingDate', 'bookingSpecialNeeds'], 'required', 'on' => 'step2'],
+            [['bookingDate'], "date", 'format' => 'php:Y-m-d', 'message' => 'Invalid booking date.', 'on' => 'step2'],
+            [['travelerType', 'travelerName', 'travelerAddress', 'travelerEmail'], 'required', 'on' => 'step3', 'message'=>'This field cannot be empty.'],
+            [['travelerPersonNames'], 'required', 'on' => 'step3', 'when' => function ($model) {
+                return $model->travelerType == $model->getTravelerTypeList()['Family'] ;
+            }, 'message' => 'Names cannot be empty.'],
+            [['travelerDoBMonth'], 'required', 'on' => 'step3', 'message' => "Select Month."],
+            [['travelerDoBYear'], 'required', 'on' => 'step3', 'message' => "Select Year."],
+            [['travelerEmail'], 'email', 'on' => 'step3', 'message'=>'Email address is not valid.'],
+            [['travelerName'],'match','pattern'=>'/[A-Za-z .]{2,100}$/', 'on' => 'step3'],
             [['paymentOptionCardType', 'paymentOptionCardHolderName', 'paymentOptionCardNumber', 'paymentOptionExpiryMonth', 'paymentOptionExpiryYear', 'paymentOptionCVV'], 'required', 'on' => 'step4'],
-
-//            // email has to be a valid email address
-//            ['email', 'email'],
-//            // verifyCode needs to be entered correctly
-//            ['verifyCode', 'captcha'],
-        ];
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function attributeLabels()
-    {
-        return [
-            'verifyCode' => 'Verification Code',
+            // email has to be a valid email address
+            //['travelerEmail', 'email'],
+            // verifyCode needs to be entered correctly
+            //['verifyCode', 'captcha'],
         ];
     }
 
@@ -146,6 +143,19 @@ class TicketModel extends Model
 
     public function getMonthNames()
     {
-        return ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"];
+        return array_combine(range(1,12), ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"]);
     }
+    
+    /**
+     * @inheritdoc
+     */
+    public function attributeLabels()
+    {
+        return [
+            'travelerDoBMonth' => 'DOB Month',
+            'travelerDoBYear' => 'DOB Year',
+            'CVV' => 'CVV Number',
+        ];
+    }
+    
 }

@@ -20,7 +20,7 @@
 
                     <p>We've teamed up with 'The North Face' to offer you an incredible 25% off the Alloy Jacket - one
                         of the latest and best jackets from the leading brand and perfect for Ski and Alpine lovers!<br>
-                        <span><strike> RRP &pound;280</strike>  Save 25%     Our price: �210</span></p>
+                        <span><strike> RRP &pound;280</strike>  Save 25%     Our price: &pound;210</span></p>
 
                 </div>
             </div>

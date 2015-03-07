@@ -11,6 +11,13 @@ $config = [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'sg0Wrpy-36bg6iRtVXdbDi1Odfm4oBJ8',
         ],
+        'stripe' => [
+            'class' => 'ruskid\stripe\Stripe',
+            'publicKey' => "sk_test_zYmYzzhW9eYXMRhMtWwEAS2D", // Test
+            'privateKey' => "pk_test_fYxM9qObwx5mZSjgHXVoGxpk", // Test
+//            'publicKey' => "sk_live_1gKfqaDnD2pS0cp2GxUCnj26", // Live Details
+//            'privateKey' => "pk_live_UEPb0AOZNz5j0Sv2ttUO5Dop", // Live
+        ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],

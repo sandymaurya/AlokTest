@@ -1,18 +1,21 @@
 <?php
-use yii\widgets\ActiveForm;
+    use yii\widgets\ActiveForm;
 ?>
 <div class="col-md-8 buy-g-col">
     <!--Tabs -->
     <div class="sap_tabs">
         <div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
             <ul class="resp-tabs-list">
-                <li class="resp-tab-item" aria-controls="tab_item-0" role="tab"><span>Step 1: Tickets</span>
+                <li class="resp-tab-item">
+                    <span>Step 1: Tickets</span>
                 </li>
-                <li class="resp-tab-item" aria-controls="tab_item-1" role="tab">
+                <li class="resp-tab-item">
                     <span>Step 2: Select Date</span></li>
-                <li class="resp-tab-item" aria-controls="tab_item-2" role="tab"><span>Step 3: Traveler's info</span>
+                <li class="resp-tab-item">
+                    <span>Step 3: Traveler's info</span>
                 </li>
-                <li class="resp-tab-item" aria-controls="tab_item-3" role="tab"><span>Step 4: Payment</span>
+                <li class="resp-tab-item">
+                    <span>Step 4: Payment</span>
                 </li>
                 <div class="clearfix"></div>
             </ul>
